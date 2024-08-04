@@ -57,7 +57,6 @@ class SymbolWatcher(Client):
 
     def on_message(self, ws, message):
         self.message_buffer.put(message)
-        print("message received")
     
     def write_to_file(self):
         with open(f"{self.symbol}.txt", 'a') as file:
@@ -70,7 +69,6 @@ class SymbolWatcher(Client):
                     for i in range(min(len(bids), len(asks))):
                         entry = f"{data['lastUpdateId']}, {get_unix_time()}, {bids[i][0]}, {asks[i][0]}, {bids[i][1]}, {asks[i][1]}\n"
                         file.write(entry)
-                        print("data logged")
                 except queue.Empty:
                     continue
                 except json.JSONDecodeError as e:

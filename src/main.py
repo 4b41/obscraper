@@ -53,7 +53,7 @@ class SymbolWatcher(Client):
         self.message_buffer = queue.Queue()
         self.symbol = symbol
         super().__init__(url, "Binance", interval)
-        print("watcher created successfully")
+        print("Watcher created successfully")
 
     def on_message(self, ws, message):
         self.message_buffer.put(message)
@@ -109,8 +109,6 @@ def remove_watcher(args):
 
     watcher.join()
     writer.join()
-
-    
 
 def parser():
     parser = argparse.ArgumentParser()

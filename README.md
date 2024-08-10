@@ -1,6 +1,6 @@
 ## obscraper
 
-Orderbook scraping tool to log Level 2 data from the Binance.US api.
+Orderbook scraping tool to log Level 2 data from the Binance.us api.
 
 Uses threaded websocket clients to monitor individual symbols and writes incoming orders in txt files.
 

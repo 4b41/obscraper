@@ -85,7 +85,7 @@ def create_watcher(args):
     if not os.path.exists(f"{symbol}.txt"):
         try:
             with open(f"{symbol}.txt", 'w') as file:
-                file.write("TIMEID UNIXTIME BID ASK BIDSIZE OFFERSIZE\n")
+                file.write("TIMEID UNIXTIME BID ASK BIDSIZE ASKSIZE\n")
             print(f"File '{symbol}.txt' created.")
         except IOError as e:
             print(f"Error occurred while writing to the file: {e}")
